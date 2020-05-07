@@ -24,7 +24,7 @@ module.exports = appInfo => {
   };
   config.mysql = {
     client:{
-      host:'localhost',
+      host:'47.95.145.164',
       port:'3306',
       user:'root',
       database:'react_blog',
@@ -40,7 +40,7 @@ module.exports = appInfo => {
     domainWhiteList:['*']
   }
   config.cors = {
-    origin:'http://localhost:3000',
+    origin:'http://47.95.145.164:3000',
     credentials:true, // cook跨域
     allowMethods:'GET,HEAD,PUT,DELETE,PATCH,OPTIONS'
   }
