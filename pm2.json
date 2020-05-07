@@ -1,7 +1,7 @@
 {
   "apps": {
       "name": "service",                                    
-      "script": "./bin/www",                   
+      "script": "./",                   
       "cwd": "./",                                
       "args": "",                                 
       "interpreter": "",                          
