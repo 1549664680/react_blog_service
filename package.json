@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
+  "homepage":"http://ljrblog.com",
   "egg": {
     "declarations": true
   },
@@ -34,7 +35,8 @@
     "cov": "egg-bin cov",
     "lint": "eslint .",
     "ci": "npm run lint && npm run cov",
-    "autod": "autod"
+    "autod": "autod",
+    "pm2": "pm2 start pm2.json" 
   },
   "ci": {
     "version": "10"
