@@ -4,6 +4,7 @@ class MainController extends Controller {
   async checkLogin() {
     let userName = this.ctx.request.body.userName
     let password = this.ctx.request.body.password
+    console.log(this.ctx.request.body)
     const sql = "select userName from admin_user where userName = '" + userName + "'and password = '" + password + "'"
     const res = await this.app.mysql.query(sql)
     if (res.length > 0) {

@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "homepage":"http://ljrblog.com",
   "egg": {
     "declarations": true
   },
