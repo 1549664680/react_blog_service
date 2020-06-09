@@ -8,7 +8,7 @@ class HomeController extends Controller {
     ctx.body = 'api hi';
   }
   async getArticleList() {
-    let sql = 'select article.Id as id,' +
+    let sql = 'select article.id as id,' +
       'article.title as title,' +
       'article.introduce as introduce,' +
       "article.addTime as addTime," +
@@ -20,7 +20,7 @@ class HomeController extends Controller {
   }
   async getArticleById() {
     let id = this.ctx.params.id
-    let sql = 'select article.Id as id,' +
+    let sql = 'select article.id as id,' +
       'article.title as title,' +
       'article.introduce as introduce,' +
       'article.article_content as article_content,' +
@@ -29,7 +29,7 @@ class HomeController extends Controller {
       'type.typeName as typeName,' +
       'type.id as typeId ' +
       'from article left join type on article.type_id = type.id ' +
-      'WHERE article.Id=' + id
+      'WHERE article.id=' + id
     const result = await this.app.mysql.query(sql)
     this.ctx.body = { data: result }
   }
@@ -39,15 +39,16 @@ class HomeController extends Controller {
   }
   async getListByid() {
     let id = this.ctx.params.id
-    let sql = 'select article.Id as id,' +
+    let sql = 'select article.id as id,' +
       'article.title as title,' +
       'article.introduce as introduce,' +
       "article.addTime as addTime," +
       'article.view_count as view_count,' +
       'type.typeName as typeName ' +
-      'from article left join type on article.type_id = type.id '
-      'where type_id='+id
+      'from article left join type on article.type_id = type.id ' +
+      'WHERE article.type_id = '+id
     const result = await this.app.mysql.query(sql)
+    console.log(result)
     this.ctx.body = { data: result }
   }
 }
