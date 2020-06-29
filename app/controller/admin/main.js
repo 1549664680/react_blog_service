@@ -39,7 +39,7 @@ class MainController extends Controller {
     }
   }
   async getArticleList() {
-    let sql = 'select article.Id as id,' +
+    let sql = 'select article.id as id,' +
       'article.title as title,' +
       'article.introduce as introduce,' +
       "article.addTime as addTime," +
@@ -61,7 +61,7 @@ class MainController extends Controller {
   }
   async getArticleById(){
     let id = this.ctx.params.id
-    let sql = 'select article.Id as id,' +
+    let sql = 'select article.id as id,' +
       'article.title as title,' +
       'article.article_content as content ,' +
       'article.introduce as introduce,' +

@@ -44,7 +44,7 @@ module.exports = appInfo => {
     // origin:'http://admin.ljrblog.com,http://ljrblog.com:3000/',
     origin:'http://localhost:3000',
     credentials:true, // cook跨域
-    allowMethods:'GET,HEAD,PUT,DELE+TE,PATCH,OPTIONS'
+    allowMethods:'GET,HEAD,PUT,DELETE,PATCH,OPTIONS'
   }
   return {
     ...config,

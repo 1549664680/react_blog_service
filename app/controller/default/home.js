@@ -16,10 +16,13 @@ class HomeController extends Controller {
       'type.typeName as typeName ' +
       'from article left join type on article.type_id = type.id '
     const results = await this.app.mysql.query(sql)
+    results.sort((a,b) =>b.id - a.id)
     this.ctx.body = { data: results }
   }
   async getArticleById() {
     let id = this.ctx.params.id
+    let addCountSql = "UPDATE article SET view_count = view_count+1 WHERE id=" + id;
+    await this.app.mysql.query(addCountSql)
     let sql = 'select article.id as id,' +
       'article.title as title,' +
       'article.introduce as introduce,' +
@@ -48,7 +51,7 @@ class HomeController extends Controller {
       'from article left join type on article.type_id = type.id ' +
       'WHERE article.type_id = '+id
     const result = await this.app.mysql.query(sql)
-    console.log(result)
+    result.sort((a,b) =>b.id - a.id)
     this.ctx.body = { data: result }
   }
 }
